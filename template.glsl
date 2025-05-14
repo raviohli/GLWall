@@ -2,7 +2,7 @@
 out vec4 FragColor;
 
 uniform vec3 iResolution; // Resolution of the shader window
-uniform float iTime; // Time in seconds since start of rendering
+uniform float iTime; // Time in seconds since start of rendering (goes back to 0 after 60 seconds)
 uniform float iTimeDelta; // Time in seconds since last frame
 uniform float iBatteryLevel; // Battery level of your pc, from 0 (empty) to 1 (full)
 uniform float iLocalTime; // Local time of your pc, from 0 (12 am) to 1 (11:59:59 pm)
