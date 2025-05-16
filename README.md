@@ -23,7 +23,7 @@ To use as a wallpaper, you can use [xwinwrap](https://github.com/mmhobi7/xwinwra
 The shader rendering can be paused with `pkill -SIGUSR1 GLWall` and unpaused with `pkill -SIGUSR2 GLWall` so you can bind that to whatever works with your system (it's advisable to pause rendering when anything is in fullscreen mode or when playing a game in general)
 
 ## Shaders
-If you want to create your own shader, copy `/template.glsl` and go at it.
+If you want to create your own shader, copy `template.glsl` and go at it.
 
 Some helpful resources: 
 - [The book of shaders](http://www.thebookofshaders.com/)
