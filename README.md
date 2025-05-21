@@ -28,5 +28,5 @@ The shader rendering can be paused with `pkill -SIGUSR1 GLWall` and unpaused wit
 If you want to create your own shader, copy `template.glsl` and go at it.
 
 Some helpful resources: 
-- [The book of shaders](http://www.thebookofshaders.com/)
+- [The book of shaders](https://thebookofshaders.com/)
 - [Shadertoy](https://www.shadertoy.com/)
