@@ -356,7 +356,7 @@ int main(int argc, char *argv[]) {
         
         // Pass the window width and time to the shader
         glUniform3f(resolutionLocation, (float)width, (float)height, 1.0f);
-        glUniform4f(mouseLocation, (float)mouseX, (float)mouseY, (float)0.0, (float)0.0);
+        glUniform4f(mouseLocation, (float)mouseX, 1.0 - (float)mouseY, (float)0.0, (float)0.0);
         glUniform1f(timeLocation, (float)glfw_time);
         glUniform1f(timeDeltaLocation, (float)delta);
         glUniform1f(batteryLevelLocation, (float)battery_level);
