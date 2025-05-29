@@ -278,6 +278,14 @@ int main(int argc, char *argv[]) {
     int battery_level = 0;
     float local_time = 0;
 
+    int has_battery = 1;
+    FILE *fp = fopen(battery_capacity_path, "r");
+    if (fp == NULL) {
+        perror("Failed to open battery capacity file");
+        has_battery = 0;
+    } else {
+        fclose(fp);
+    }
 
     // Render loop
     int frame = 0;
@@ -302,18 +310,16 @@ int main(int argc, char *argv[]) {
         if (frame == 0) 
         {
             // Battery
-            FILE *fp = fopen(battery_capacity_path, "r");
-            if (fp == NULL) {
-                perror("Failed to open battery capacity file");
-                return -1;
-            }
-            if (fscanf(fp, "%d", &battery_level) != 1) {
-                perror("Failed to read battery level");
+            if (has_battery) {
+                fp = fopen(battery_capacity_path, "r");
+                if (fscanf(fp, "%d", &battery_level) != 1) {
+                    perror("Failed to read battery level");
+                    fclose(fp);
+                    return -1;
+                }
+                battery_level /= 100.0;
                 fclose(fp);
-                return -1;
             }
-            battery_level /= 100.0;
-            fclose(fp);
 
             // Time
             time_t rawtime;
